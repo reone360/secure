@@ -1,0 +1,47 @@
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+/*noinspection CssUnknownTarget*/
+@import url('http://www.w3schools.com/lib/w3.css');
+/*noinspection CssUnknownTarget*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+body{
+    font-family: 'Lobster', cursive;
+}
+
+.signupForm{
+    font-family: 'Lobster', cursive;
+    font-size : 14px;
+    padding: 350px;
+}
+
+.inp{
+    padding: 10px;
+    position: relative;
+    left: 510px;
+}
+
+nav{
+    color: black;
+}
+
+.submit{
+    padding: 10px;
+    float: left;
+    position: relative;
+    left: 570px;
+}
+
+.signupH1{
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    position: relative;
+    top: 300px;
+}
+
+strong{
+    font-family: 'Lobster', cursive;
+    font-size : 30px;
+    padding: 350px;
+}
