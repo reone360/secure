@@ -31,8 +31,8 @@ $das ="pass";
             <a href="#food" onclick="w3_close()">Gallery</a>
             <a href="#about" onclick="w3_close()">About</a>
 
-            <a href="#signin_scene.php" onclick="w3_close()">Sign In</a>
-            <a href="#signout_scene.php" onclick="w3_close()">Sign Out</a>
+            <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
+            <a href="signout_scene.php" onclick="w3_close()">Sign Out</a>
         </nav>
 
         <div class="w3-opennav w3-left w3-hover-text-grey" onclick="w3_open()">☰</div>

@@ -2,10 +2,10 @@
 
     include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/index_call.php');
 
+    session_start();
 
-
-$class1 = new indexCall();
-//$class1 ->SomeFunc();
+    $class1 = new indexCall();
+    $class1 ->SomeFunc();
 
 ?>
 
@@ -24,8 +24,8 @@ $class1 = new indexCall();
             <a href="#food" onclick="w3_close()">Gallery</a>
             <a href="#about" onclick="w3_close()">About</a>
             <a href="signup_scene.php" onclick="w3_close()">Sign Up</a>
-            <a href="#signin_scene.php" onclick="w3_close()">Sign In</a>
-            <a href="#signout_scene.php" onclick="w3_close()">Sign Out</a>
+            <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
+            <a href="signout_scene.php" onclick="w3_close()">Sign Out</a>
         </nav>
 
         <!-- Top menu -->

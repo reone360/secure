@@ -1,5 +1,5 @@
 /*noinspection CssUnknownTarget*/
-@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 /*noinspection CssUnknownTarget*/
 @import url('http://www.w3schools.com/lib/w3.css');
 /*noinspection CssUnknownTarget*/
@@ -7,11 +7,17 @@
 
 
 body{
-    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 .signupForm{
-    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-size : 14px;
+    padding: 350px;
+}
+
+.signinForm{
+    font-family: 'Roboto', sans-serif;
     font-size : 14px;
     padding: 350px;
 }
@@ -33,15 +39,22 @@ nav{
     left: 570px;
 }
 
+.func{
+    padding: 10px;
+    float: left;
+    position: relative;
+    left: 570px;
+}
+
 .signupH1{
-    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     position: relative;
     top: 300px;
 }
 
 strong{
-    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size : 30px;
     padding: 350px;
 }
