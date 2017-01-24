@@ -13,6 +13,7 @@
 
     <head>
         <link href="CSS/MainStyle.css" rel="stylesheet">
+        <link href="CSS/carbon.css" rel="stylesheet">
     </head>
 
     <body>
@@ -54,6 +55,19 @@
                 document.getElementById("mySidenav").style.display = "none";
             }
         </script>
+
+        <div id="callcomments" class="callcomments" name="callcomments">
+            <?php $class1-> callComments();?>
+        </div>
+
+
+        <form id="commentSubmit" class="commentSubmit" name="commentSubmit" method="POST">
+            <input type="text" class="cmt" id="cmt" name="cmt" placeholder="Please type a comment"> </br>
+            </br>
+            <input type="submit" class="post" id="post" value="Post" name="submit"> </br>
+
+            <?php if(isset($_POST['submit']))   $class1->insertComments();  ?>
+        </form>
 
     </body>
 
