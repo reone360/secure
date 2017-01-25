@@ -26,12 +26,14 @@ $class1 = new signUp();
 
         <!-- Sidenav (hidden by default) -->
         <nav class="w3-sidenav w3-card-2 w3-top w3-medium w3-animate-top" id="mySidenav">
-            <a href="javascript:void(0)" onclick="w3_close()"
-               class="w3-closenav">Close</a>
+
             <a href="index_scene.php" onclick="w3_close()">Home</a>
-            <a href="#about" onclick="w3_close()">About</a>
+            <a href="about_scene.php" onclick="w3_close()">About</a>
             <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
             <a href="signout_scene.php" onclick="w3_close()">Sign Out</a>
+            <a href="javascript:void(0)" onclick="w3_close()"
+               class="w3-closenav">Close</a>
+
         </nav>
 
         <div class="w3-opennav w3-top w3-hover-text-grey" onclick="w3_open()">☰</div>

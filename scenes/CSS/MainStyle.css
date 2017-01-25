@@ -50,7 +50,9 @@ strong{
 .signupForm{
     font-family: 'Roboto', sans-serif;
     font-size : 14px;
-    padding: 350px;
+    padding: 300px;
+    position: relative;
+    left: 3%;
 }
 
 .signinForm{
@@ -73,7 +75,8 @@ nav{
     padding: 10px;
     float: left;
     position: relative;
-    left: 570px;
+    left: 565px;
+    top: 5px;
 }
 
 .func{
@@ -84,6 +87,13 @@ nav{
 }
 
 .signupH1{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    position: relative;
+    top: 250px;
+}
+
+.signinH1{
     font-family: 'Roboto', sans-serif;
     text-align: center;
     position: relative;

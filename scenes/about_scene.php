@@ -1,14 +1,10 @@
 <?php
-
-    include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/signin_call.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/about_call.php');
 
     session_start();
-
-    $class1= new signIn();
-
-
+    $class = new aboutus();
+    $class-> aboutInit();
 ?>
-
 
 <html>
 
@@ -32,22 +28,12 @@
 
         </nav>
 
-        <div class="w3-opennav w3-left w3-hover-text-grey" onclick="w3_open()">☰</div>
+        <!-- Top menu -->
+        <div class="w3-top">
 
-        <div>
-            <h1 class="signinH1"> Use the following form to sing in</h1>
+            <div class="w3-opennav w3-left w3-hover-text-grey" onclick="w3_open()">☰</div>
+
         </div>
-
-        <form id="signinForm" class="signinForm" name="signinForm" method="POST">
-
-            <input type="text" class="inp" id="username" name="user" placeholder="Your username"> </br>
-            </br>
-            <input type="password" class="inp" id="pass" name="pass" placeholder="Your password"> </br>
-            </br>
-            <input type="submit" class="submit" id="submit" value="Sign In" name="submit"> </br>
-
-            <?php if(isset($_POST['submit']))   $class1->validateUser();  ?>
-        </form>
 
         <script>
             // Script to open and close sidenav
@@ -60,9 +46,7 @@
             }
         </script>
 
+
     </body>
 
 </html>
-
-
-

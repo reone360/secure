@@ -29,7 +29,7 @@ class signUp
         }
         else
         {
-            $sql = "INSERT INTO $table (username, password)VALUES ('$user', '$pass')";
+            $sql = "INSERT INTO $table (pid, username, password)VALUES ('4', '$user', '$pass')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "Account created successfully";
