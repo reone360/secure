@@ -20,10 +20,10 @@
     <body>
 
         <!-- Sidenav (hidden by default) -->
-        <nav class="w3-sidenav w3-card-2 w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidenav">
+        <nav class="w3-sidenav w3-card-2 w3-top w3-medium w3-animate-top" id="mySidenav">
             <a href="javascript:void(0)" onclick="w3_close()"
                class="w3-closenav">Close</a>
-            <a href="#food" onclick="w3_close()">Gallery</a>
+            <a href="index_scene.php" onclick="w3_close()">Home</a>
             <a href="#about" onclick="w3_close()">About</a>
             <a href="signup_scene.php" onclick="w3_close()">Sign Up</a>
             <a href="signin_scene.php" onclick="w3_close()">Sign In</a>

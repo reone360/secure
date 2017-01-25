@@ -2,7 +2,7 @@
 
 class indexCall
 {
-    public function SomeFunc()
+    public function WelcomeFunc()
     {
         if (isset($_SESSION['username']))
         {
@@ -10,13 +10,45 @@ class indexCall
 
             if ($userCheck!= null)
             {
-                echo "<p style='position: absolute; left: 75%; top: 12% '>Hi! " . $_SESSION['username']."</p>";
+                echo "<p style='position: absolute; left: 75%; top: 1% '>Hi! " . $_SESSION['username']."</p>";
             }
         }
         else
         {
-            echo "<p style='position: absolute; left: 75%; top: 12% '>Welcome!</p>";
+            echo "<p style='position: absolute; left: 75%; top: 1% '>Welcome!</p>";
         }
+    }
+
+    public function rendFunc() //this function renders comments, this way this can be used at any page by just calling the class
+    {
+        if (isset($_SESSION['username']))
+        {
+            $userCheck = $_SESSION['username'];
+
+            if ($userCheck!= null)
+            {
+
+               echo" <div id='callcomments' class='callcomments' name='callcomments'>"; //no need to worry about style because the div already exists in the MainStyle.css
+                    $this-> callComments();
+
+               echo"     </br>
+                    </br>
+                </div>
+
+
+                <form id='commentSubmit' class='commentSubmit' name='commentSubmit' method='POST'>
+                    <textarea class='cmt' id='cmt' name='cmt' placeholder='Please type a comment'></textarea> </br>
+                    </br>
+                    <input type='submit' class='post' id='post' value='Post' name='submit'> </br>";
+
+                if(isset($_POST['submit']))   $this->insertComments();
+                echo "</form>";
+
+             }
+        }
+        else
+            echo "<p style='position: absolute; left: 41%; top: 20% '>Please Sign In to see comments!</p>";
+
     }
 
 
@@ -88,7 +120,8 @@ class indexCall
             {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo $row["username"]. " - Commented: " . $row["comment"]. "<br>";
+                    echo "<p style='color:greenyellow;'>" . $row["username"]. " - Commented: </p>" . $row["comment"]. "<br><br>";
+                    echo "</br>";
                 }
 
             } else {

@@ -10,6 +10,43 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+
+strong{
+    font-family: 'Roboto', sans-serif;
+    font-size : 30px;
+    padding: 350px;
+    text-decoration: underline;
+    position: relative;
+    left: 20%;
+}
+
+.pcmt{
+    font-family: 'Roboto', sans-serif;
+    text-decoration: underline;
+    position: relative;
+    left: 40%;
+}
+
+.w3-sidenav{
+    position: relative;
+    display:none;
+    z-index:2;
+    width:10%;
+    min-width:100px;
+    left: 300px;
+    height:20%;
+}
+
+.w3-white{
+    position: absolute;
+    left:45%;
+}
+.w3-opennav{
+    position: relative;
+    left: 300px;
+    font-size: x-large;
+}
+
 .signupForm{
     font-family: 'Roboto', sans-serif;
     font-size : 14px;
@@ -53,8 +90,21 @@ nav{
     top: 300px;
 }
 
-strong{
-    font-family: 'Roboto', sans-serif;
-    font-size : 30px;
-    padding: 350px;
+.callcomments{
+    width: 500px;
+    position: relative;
+    left: 40%;
+    text-align: left;
+}
+.post{
+    position: relative;
+    left: 40%;
+    width: 500px;
+}
+
+.cmt{
+    width: 500px;
+    resize: none;
+    position: relative;
+    left: 40%;
 }

@@ -7,8 +7,8 @@ include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/signup_call.php');
 $class1 = new signUp();
 //$class1 ->SignUpFunc();
 
-$jan ="hi";
-$das ="pass";
+//$jan ="hi";
+//$das ="pass";
 
 //$class1->StoreDetails($jan, $das);
 
@@ -25,17 +25,16 @@ $das ="pass";
     <body>
 
         <!-- Sidenav (hidden by default) -->
-        <nav class="w3-sidenav w3-card-2 w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidenav">
+        <nav class="w3-sidenav w3-card-2 w3-top w3-medium w3-animate-top" id="mySidenav">
             <a href="javascript:void(0)" onclick="w3_close()"
                class="w3-closenav">Close</a>
-            <a href="#food" onclick="w3_close()">Gallery</a>
+            <a href="index_scene.php" onclick="w3_close()">Home</a>
             <a href="#about" onclick="w3_close()">About</a>
-
             <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
             <a href="signout_scene.php" onclick="w3_close()">Sign Out</a>
         </nav>
 
-        <div class="w3-opennav w3-left w3-hover-text-grey" onclick="w3_open()">☰</div>
+        <div class="w3-opennav w3-top w3-hover-text-grey" onclick="w3_open()">☰</div>
 
         <div>
             <h1 class="signupH1"> Use the following form to sing in</h1>
