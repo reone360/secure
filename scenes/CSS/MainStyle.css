@@ -118,3 +118,9 @@ nav{
     position: relative;
     left: 40%;
 }
+
+.about{
+    position: relative;
+    left: 40%;
+    top: 200px;
+}

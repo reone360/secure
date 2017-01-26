@@ -3,7 +3,6 @@
 
     session_start();
     $class = new aboutus();
-    $class-> aboutInit();
 ?>
 
 <html>
@@ -22,7 +21,7 @@
             <a href="about_scene.php" onclick="w3_close()">About</a>
             <a href="signup_scene.php" onclick="w3_close()">Sign Up</a>
             <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
-            <a href="signout_scene.php" onclick="w3_close()">Sign Out</a>
+            <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Sign Out</a>";}?>
             <a href="javascript:void(0)" onclick="w3_close()"
                class="w3-closenav">Close</a>
 
@@ -34,6 +33,13 @@
             <div class="w3-opennav w3-left w3-hover-text-grey" onclick="w3_open()">☰</div>
 
         </div>
+
+        <div class="about" id="about">
+            <p>This Framework was developed by ReoSoftWorks</p>
+            <p>Any more info about it can be requested at spyros360reo@gmail.com</p>
+            <p>Thank you for your support!</p>
+        </div>
+
 
         <script>
             // Script to open and close sidenav
