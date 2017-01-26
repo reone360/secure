@@ -7,7 +7,7 @@ class signUp
         echo "<meta http-equiv=\"refresh\" content=\"3;url=http://localhost/secure/\" />";
     }
 
-    public function FormGen()//an example of renderer(for all those java servlets nabs coming over)
+    public function FormGen()//an example of renderer(for all those java servlets nabs coming over :P)
     {
         echo "<input type='text'>";
     }
@@ -32,9 +32,12 @@ class signUp
             $sql = "INSERT INTO $table (pid, username, password)VALUES ('4', '$user', '$pass')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "Account created successfully";
+                echo "<p style='color:greenyellow; position: absolute; left: 41%; top: 65% '>Account created successfully</p>";
+                $this->SignUpFunc();
+
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                //echo "Error: " . $sql . "<br>" . $conn->error; //enable this for develop
+                echo "<p style='color:mediumvioletred; position: absolute; left: 43%; top: 65% '>Username already exists</p>";
             }
 
             $conn->close();
@@ -51,14 +54,17 @@ class signUp
 
         $temp = new signUp();
 
-        if ($pass != $passConfirm)
+        if (($user ==null) || ($pass ==null))
         {
-            echo "Passwords don't match";
+            echo "<p style='color:orangered; position: absolute; left: 41%; top: 65% '>Username and password are mandatory</p>";
+        }
+        else if ($pass != $passConfirm)
+        {
+            echo "<p style='color:orangered; position: absolute; left: 41%; top: 65% '>Passwords don't match</p>";
         }
         else
         {
             $pass_encrypted = crypt($pass, '$2a$09$tryingtoblowtheblowfish$');
-            $temp->SignUpFunc();
             $temp->StoreDetails($user,$pass_encrypted);
 
         }

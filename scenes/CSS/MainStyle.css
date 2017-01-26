@@ -102,13 +102,17 @@ nav{
 
 .callcomments{
     width: 500px;
+    height: 500px;
     position: relative;
-    left: 40%;
+    left: 35%;
+    top: 100px;
     text-align: left;
+    overflow-y: auto;
 }
 .post{
     position: relative;
-    left: 40%;
+    left: 35%;
+    top: 100px;
     width: 500px;
 }
 
@@ -116,7 +120,8 @@ nav{
     width: 500px;
     resize: none;
     position: relative;
-    left: 40%;
+    left: 35%;
+    top: 110px;
 }
 
 .about{

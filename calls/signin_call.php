@@ -37,7 +37,7 @@ class signIn
             if (mysqli_num_rows($result) == 1) {
 
                 $_SESSION['username']= $user;
-                echo "Logged In successfully";
+                echo "<p style='color:greenyellow; position: absolute; left: 41%; top: 65% '>Sign In successful</p>";
                 echo "<meta http-equiv=\"refresh\" content=\"3;url=http://localhost/secure/\" />";
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error;

@@ -32,7 +32,6 @@ class indexCall
                     $this-> callComments();
 
                echo"     </br>
-                    </br>
                 </div>
 
 
@@ -47,7 +46,7 @@ class indexCall
              }
         }
         else
-            echo "<p style='position: absolute; left: 41%; top: 20% '>Please Sign In to see comments!</p>";
+            echo "<p style='position: absolute; left: 43%; top: 20% '>Please Sign In to see comments!</p>";
 
     }
 
@@ -64,6 +63,9 @@ class indexCall
 
         $commentTxt = $_POST['cmt'];
         $user = $_SESSION['username'];
+        $datetime = new DateTime();
+
+        $date = $datetime->format('d-m-Y H:i');
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $db);
@@ -78,22 +80,25 @@ class indexCall
         {
             echo "Please login first";
         }
-        else
+        else if ($commentTxt != null)
         {
-            $sql = "INSERT INTO $table (comment, username)VALUES ('$commentTxt','$user')";
+            $sql = "INSERT INTO $table (comment, username, timing )VALUES ('$commentTxt','$user', '$date')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "Comment Added";
+                echo "<p style='color: orangered; position: absolute; left: 43%; top: 90% '>Comment Posted Successfully</p>";
+                echo "<meta http-equiv=\"refresh\" content=\"1;url=http://localhost/secure/\" />";
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error;
-                echo "Comment was not added, if the problem persists please contact us";
+                echo "<p style='color: orangered; position: absolute; left: 34%; top: 90% '>Comment was not posted successfully, if the problem persists please contact us</p>";
             }
 
             $conn->close();
             //echo "Connected successfully";
-            echo "<meta http-equiv=\"refresh\" content=\"1;url=http://localhost/secure/\" />";
         }
-
+        else
+        {
+            echo "<p style='color: orangered; position: absolute; left: 40%; top: 90% '>Please enter a comment first before posting</p>";;
+        }
     }
 
 
@@ -113,14 +118,14 @@ class indexCall
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         } else {
-            $sql = "SELECT username, comment FROM $table";
+            $sql = "SELECT cid, username, comment, timing FROM $table ORDER BY cid DESC";
             $result = $conn->query($sql);
 
             if ($result->num_rows  > 0)
             {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "<p style='color:greenyellow;'>" . $row["username"]. " - Commented: </p>" . $row["comment"]. "<br><br>";
+                    echo "<p style='color:greenyellow;'>" . $row["username"]. " - Commented @ ".$row["timing"]." : </p>" . $row["comment"]. "<br><br>";
                     echo "</br>";
                 }
 
