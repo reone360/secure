@@ -40,7 +40,7 @@
         </div>
 
 
-        <strong> Main-Comment Section</strong>
+        <strong> Shoutbox</strong>
 
             <!-- End page content -->
 

@@ -36,9 +36,9 @@ class indexCall
 
 
                 <form id='commentSubmit' class='commentSubmit' name='commentSubmit' method='POST'>
-                    <textarea class='cmt' id='cmt' name='cmt' placeholder='Please type a comment'></textarea> </br>
+                    <textarea class='cmt' id='cmt' name='cmt' placeholder='Feel free to shout'></textarea> </br>
                     </br>
-                    <input type='submit' class='post' id='post' value='Post' name='submit'> </br>";
+                    <input type='submit' class='post' id='post' value='Fus-Roh-Dah!' name='submit'> </br>";
 
                 if(isset($_POST['submit']))   $this->insertComments();
                 echo "</form>";
