@@ -34,7 +34,7 @@ strong{
     width:10%;
     min-width:100px;
     left: 300px;
-    height:20%;
+    height:155px;
 }
 
 .w3-white{
@@ -50,15 +50,17 @@ strong{
 .signupForm{
     font-family: 'Roboto', sans-serif;
     font-size : 14px;
-    padding: 300px;
     position: relative;
-    left: 3%;
+    top: 200px;
+    left: 15%;
 }
 
 .signinForm{
     font-family: 'Roboto', sans-serif;
     font-size : 14px;
-    padding: 350px;
+    position: relative;
+    top: 200px;
+    left: 15%;
 }
 
 .inp{
@@ -90,14 +92,15 @@ nav{
     font-family: 'Roboto', sans-serif;
     text-align: center;
     position: relative;
-    top: 250px;
+    top: 200px;
 }
 
 .signinH1{
     font-family: 'Roboto', sans-serif;
     text-align: center;
     position: relative;
-    top: 300px;
+    left: -20px;
+    top: 200px;
 }
 
 .callcomments{

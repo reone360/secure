@@ -1,22 +1,93 @@
 <?php
 
-class indexCall
+class testCall
 {
-    public function WelcomeFunc()
+    public function chat()
     {
-        if (isset($_SESSION['username']))
-        {
-            $userCheck = $_SESSION['username'];
+        //Creates a new chat room==========================================================================
+        echo "<form method='POST'>
+               <input type='text' id='rname' class='rname' name='rname' placeholder='Enter room name'>
+               <input type='submit' id='crroom' class='crroom' name='crroom' value='Create Room'>";
 
-            if ($userCheck!= null)
-            {
-                echo "<p style='position: absolute; left: 75%; top: 1% '>Hi! " . $_SESSION['username']."</p>";
-            }
+        if(isset($_POST['crroom']))   $this->crRoom();
+        echo "</form>";
+
+        //Loads a previously created chatroom==============================================================
+        echo "<form method='POST'>
+               <input type='text' id='rname' class='rname' name='rname' placeholder='Enter room name'>
+               <input type='submit' id='crroom' class='crroom' name='loadroom' value='Load Room'>";
+
+        if(isset($_POST['loadroom']))   $this->rendFunc();
+        echo "</form>";
+
+        //Deletes a chatroom================================================================================
+        echo "<form method='POST'>
+               <input type='text' id='rname' class='rname' name='rname' placeholder='Enter room name'>
+               <input type='submit' id='crroom' class='crroom' name='rmroom' value='Delete Room'>";
+
+        if(isset($_POST['rmroom']))   $this->rmRoom();
+        echo "</form>";
+    }
+
+    public function crRoom()//creates a chatroom
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "chatdb";
+
+        $Rname= $_POST['rname'];
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
         }
-        else
-        {
-            echo "<p style='position: absolute; left: 75%; top: 1% '>Welcome!</p>";
+
+        // sql to create table
+        $sql = "CREATE TABLE ".$Rname."(
+        cid INT(100) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(20),
+        comment TINYTEXT,
+        timing TEXT(100)
+        )";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Room created successfully";
+        } else {
+            echo "Error creating table: " . $conn->error;
         }
+
+        $conn->close();
+    }
+
+    public function rmRoom() //Deletes a chatroom
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "chatdb";
+
+        $Rname= $_POST['rname'];
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // sql to create table
+        $sql = "DROP TABLE IF EXISTS ".$Rname."";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Room removed successfully";
+        } else {
+            echo "Error creating table: " . $conn->error;
+        }
+
+        $conn->close();
     }
 
     public function rendFunc() //this function renders comments, this way this can be used at any page by just calling the class
@@ -28,10 +99,10 @@ class indexCall
             if ($userCheck!= null)
             {
 
-               echo" <div id='callcomments' class='callcomments' name='callcomments'>"; //no need to worry about style because the div already exists in the MainStyle.css
-                    $this-> callComments();
+                echo" <div id='callcomments' class='callcomments' name='callcomments'>"; //no need to worry about style because the div already exists in the MainStyle.css
+                $this-> callComments();
 
-               echo"     </br>
+                echo"     </br>
                 </div>
 
 
@@ -43,7 +114,7 @@ class indexCall
                 if(isset($_POST['submit']))   $this->insertComments();
                 echo "</form>";
 
-             }
+            }
         }
         else
             echo "<p style='position: absolute; left: 43%; top: 20% '>Please Sign In to see comments!</p>";
@@ -58,8 +129,8 @@ class indexCall
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $db = "frameusers";
-        $table = "comments";
+        $db = "chatdb";
+        $table = $_POST['rname'];
 
         $commentTxt = $_POST['cmt'];
         $user = $_SESSION['username'];
@@ -82,7 +153,7 @@ class indexCall
         }
         else if ($commentTxt != null)
         {
-            $sql = "INSERT INTO $table (comment, username, timing )VALUES ('$commentTxt','$user', '$date')";
+            $sql = "INSERT INTO $table (username,comment, timing )VALUES ('$user','$commentTxt', '$date')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "<p style='color: orange; position: absolute; left: 43%; top: 90% '>Comment Posted Successfully</p>";
@@ -107,8 +178,8 @@ class indexCall
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $db = "frameusers";
-        $table = "comments";
+        $db = "chatdb";
+        $table = $_POST['rname'];
 
 
         // Create connection
@@ -153,5 +224,6 @@ class indexCall
             $conn->close();
         }
     }
+
 
 }

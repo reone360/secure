@@ -12,7 +12,7 @@ class signUp
         echo "<input type='text'>";
     }
 
-    public function StoreDetails($user, $pass) //Stores the user account details in the db
+    private function StoreDetails($user, $pass) //Stores the user account details in the db
     {
         $servername = "localhost";
         $username = "root";
@@ -32,12 +32,12 @@ class signUp
             $sql = "INSERT INTO $table (pid, username, password)VALUES ('4', '$user', '$pass')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "<p style='color:greenyellow; position: absolute; left: 41%; top: 65% '>Account created successfully</p>";
+                echo "<p style='color:greenyellow; position: absolute; left: 29%; top: 250px; '>Account created successfully</p>";
                 $this->SignUpFunc();
 
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error; //enable this for develop
-                echo "<p style='color:mediumvioletred; position: absolute; left: 43%; top: 65% '>Username already exists</p>";
+                echo "<p style='color:mediumvioletred; position: absolute; left: 31%; top: 250px; '>Username already exists</p>";
             }
 
             $conn->close();
@@ -56,11 +56,11 @@ class signUp
 
         if (($user ==null) || ($pass ==null))
         {
-            echo "<p style='color:orangered; position: absolute; left: 41%; top: 65% '>Username and password are mandatory</p>";
+            echo "<p style='color:orangered; position: absolute; left: 28%; top: 250px; '>Username and password are mandatory</p>";
         }
         else if ($pass != $passConfirm)
         {
-            echo "<p style='color:orangered; position: absolute; left: 41%; top: 65% '>Passwords don't match</p>";
+            echo "<p style='color:orangered; position: absolute; left: 31%; top: 250px; '>Passwords don't match</p>";
         }
         else
         {
