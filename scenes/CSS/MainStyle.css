@@ -34,7 +34,7 @@ strong{
     width:10%;
     min-width:100px;
     left: 300px;
-    height:155px;
+    height:185px;
 }
 
 .w3-white{
@@ -131,4 +131,10 @@ nav{
     position: relative;
     left: 40%;
     top: 200px;
+}
+
+.genArea{
+    position: relative;
+    left: 40%;
+    top:250px;
 }
