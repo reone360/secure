@@ -133,8 +133,55 @@ nav{
     top: 200px;
 }
 
+.impArea{
+    position: relative;
+    left: 40%;
+    top:70px;
+    height:100px;
+}
+
 .genArea{
     position: relative;
     left: 40%;
-    top:250px;
+    top:100px;
+    height:300px;
+    overflow-y: scroll;
+}
+
+.crForum{
+    position: relative;
+    left: 100px;
+}
+
+.forumSubmit{
+    position: relative;
+    right: 60px;
+    bottom: 70px;
+}
+
+h2{
+    font-size:16pt;
+    left:-60px;
+    position:relative;
+    bottom: 65px;
+}
+
+.frname{
+    position:relative;
+    width:250px;
+}
+
+.fdesc{
+    position:relative;
+    resize: none;
+    top: 15px;
+}
+h3{
+    color:green;
+}
+h4{
+    position: relative;
+    left: 40%;
+    top: 90px;
+    color: green;
 }

@@ -45,8 +45,12 @@ $class1 ->WelcomeFunc();
 
     <div class="genArea" id="genArea" name="genArea">
 
-        <?php $class1->displayForum(); ?>
+        <?php $class1->displayPost();  ?>
 
+    </div>
+
+    <div class="createBox" id="createBox" name="createBox">
+        <?php $class1->rendFuncPost(); ?>
     </div>
 
 

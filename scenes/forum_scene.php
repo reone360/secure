@@ -39,15 +39,23 @@ $class1 ->WelcomeFunc();
 
         </div>
 
-
         <strong> Forum</strong>
 
-        <div class="genArea" id="genArea" name="genArea">
-
-            <?php $class1->displayForum(); ?>
-
+        <div class="impArea" id="impArea" name="impArea">
+            <h3>Important</h3>
+            <?php $class1->displayForumImp(); ?>
         </div>
 
+        <div class="crForum" id="crForum" name="crForum">
+            <h2>Don't see a topic you like? Create your own below! </h2>
+            <?php $class1->rendFuncForum(); ?>
+        </div>
+
+
+        <h4>Scroll through our collection</h4>
+        <div class="genArea" id="genArea" name="genArea">
+            <?php $class1->displayForumGen(); ?>
+        </div>
 
         <!-- End page content -->
 
