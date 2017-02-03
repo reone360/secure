@@ -20,7 +20,10 @@ $class1 = new signUp();
     <head>
         <link href="CSS/MainStyle.css" rel="stylesheet">
         <link href="CSS/carbon.css" rel="stylesheet">
+        <link rel="shortcut icon" href="Images/title-img.ico" /> <!--Replace this part with your own logo or symbol-->
     </head>
+
+    <title> Sign Up</title>
 
     <body>
 
@@ -29,8 +32,8 @@ $class1 = new signUp();
 
             <a href="index_scene.php" onclick="w3_close()">Home</a>
             <a href="about_scene.php" onclick="w3_close()">About</a>
-            <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
             <a href="forum_scene.php" onclick="w3_close()">Forum</a>
+            <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
             <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Sign Out</a>";}?>
             <a href="javascript:void(0)" onclick="w3_close()"
                class="w3-closenav">Close</a>

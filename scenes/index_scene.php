@@ -14,7 +14,10 @@
     <head>
         <link href="CSS/MainStyle.css" rel="stylesheet">
         <link href="CSS/carbon.css" rel="stylesheet">
+        <link rel="shortcut icon" href="Images/title-img.ico" /> <!--Replace this part with your own logo or symbol-->
     </head>
+
+    <title> Welcome</title>
 
     <body>
 
