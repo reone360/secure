@@ -24,6 +24,7 @@
 
             <a href="index_scene.php" onclick="w3_close()">Home</a>
             <a href="about_scene.php" onclick="w3_close()">About</a>
+            <a href="forum_scene.php" onclick="w3_close()">Forum</a>
             <?php if (isset($_SESSION['username'])== null){ echo "<a href=\"signup_scene.php\" onclick=\"w3_close()\">Sign Up</a>";}?>
             <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
             <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Sign Out</a>";}?>
@@ -40,9 +41,9 @@
 
         <form id="signinForm" class="signinForm" name="signinForm" method="POST">
 
-            <input type="text" class="inp" id="username" name="user" placeholder="Your username"> </br>
+            <input type="text" class="inpUser" id="username" name="user" placeholder="Your username"> </br>
             </br>
-            <input type="password" class="inp" id="pass" name="pass" placeholder="Your password"> </br>
+            <input type="password" class="inpPass" id="pass" name="pass" placeholder="Your password"> </br>
             </br>
             <input type="submit" class="submit" id="submit" value="Sign In" name="submit"> </br>
 

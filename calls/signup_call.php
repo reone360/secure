@@ -32,7 +32,7 @@ class signUp
             $sql = "INSERT INTO $table (pid, username, password)VALUES ('4', '$user', '$pass')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "<p style='color:greenyellow; position: absolute; left: 29%; top: 250px; '>Account created successfully</p>";
+                echo "<p style='color:greenyellow; position: absolute; left: 31%; top: 250px; '>Account created successfully</p>";
                 $this->SignUpFunc();
 
             } else {

@@ -37,11 +37,11 @@ class signIn
             if (mysqli_num_rows($result) == 1) {
 
                 $_SESSION['username']= $user;
-                echo "<p style='color:greenyellow; position: absolute; left: 31%; top: 250px; '>Sign In successful</p>";
+                echo "<p style='color:greenyellow; position: absolute; left: 32%; top: 250px; '>Sign In successful</p>";
                 echo "<meta http-equiv=\"refresh\" content=\"3;url=http://localhost/secure/\" />";
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error;
-                echo "<p id=\"func\" class=\"func\" name=\"func\"> Login unsuccessful, please try again</p>";
+                echo "<p style='color:red; position: absolute; left: 29.5%; top: 250px; '> Login unsuccessful, please try again</p>";
 
             }
 

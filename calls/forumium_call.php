@@ -10,17 +10,16 @@ class forumCall
 
             if ($userCheck!= null)
             {
-                echo "<p style='position: absolute; left: 75%; top: 1% '>Hi! " . $_SESSION['username']."</p>";
+                echo "<p style='position: absolute; left: 75%; top: 1%;  color: deepskyblue;'>Hi! " . $_SESSION['username']."</p>";
             }
         }
         else
         {
-            echo "<p style='position: absolute; left: 75%; top: 1% '>Welcome!</p>";
+            echo "<p style='position: absolute; left: 75%; top: 1%; color: blueviolet;'>Welcome!</p>";
         }
     }
+
     //Display functions for forum, posts and replies ================================================================
-
-
     public function displayForumImp()
     {
         $servername = "localhost";
@@ -63,7 +62,8 @@ class forumCall
             }
             else
             {
-                echo "0 results";
+                //echo "0 results";
+                echo "Be the first the post!";
             }
             $conn->close();
         }
@@ -111,7 +111,8 @@ class forumCall
             }
             else
             {
-                echo "0 results";
+                //echo "0 results";
+                echo "Be the first the post!";
             }
             $conn->close();
         }
@@ -181,7 +182,8 @@ class forumCall
             }
             else
             {
-                echo "0 results";
+                //echo "0 results";
+                echo "Be the first the post!";
             }
             $conn->close();
         }
@@ -211,6 +213,11 @@ class forumCall
                 echo "</form>";
 
             }
+
+        }
+        else
+        {
+            echo "<p style='position: absolute; color: mediumvioletred'>Please Sign In to create Forum Posts!</p>";
         }
     }
 
@@ -237,7 +244,7 @@ class forumCall
             }
         }
         else
-            echo "<p style='position: absolute; left: 43%; top: 20% '>Please Sign In to create Forum Posts!</p>";
+            echo "<p style='position: absolute; left: 3%; top: 20% '>Please Sign In to create Forum Posts!</p>";
 
     }
 

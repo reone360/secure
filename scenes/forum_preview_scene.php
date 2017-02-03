@@ -43,15 +43,12 @@ $class1 ->WelcomeFunc();
 
     <strong> Forum</strong>
 
-    <div class="genArea" id="genArea" name="genArea">
-
+    <div class="postView" id="postView" name="postView">
+        <?php echo "<h5>".$_GET['name']."</h5>"; ?>
         <?php $class1->displayPost();  ?>
-
-    </div>
-
-    <div class="createBox" id="createBox" name="createBox">
         <?php $class1->rendFuncPost(); ?>
     </div>
+
 
 
     <!-- End page content -->

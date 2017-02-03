@@ -5,28 +5,21 @@
 /*noinspection CssUnknownTarget*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-
+/* main body css*/
 body{
     font-family: 'Roboto', sans-serif;
 }
 
-
+/* handles all strong elements*/
 strong{
     font-family: 'Roboto', sans-serif;
     font-size : 30px;
-    padding: 350px;
     text-decoration: underline;
-    position: relative;
-    left: 24%;
+    position: fixed;
+    left: 45%;
 }
 
-.pcmt{
-    font-family: 'Roboto', sans-serif;
-    text-decoration: underline;
-    position: relative;
-    left: 40%;
-}
-
+/* All css in this section are connected with the sidenav */
 .w3-sidenav{
     position: relative;
     display:none;
@@ -41,12 +34,20 @@ strong{
     position: absolute;
     left:45%;
 }
+
 .w3-opennav{
     position: relative;
     left: 300px;
     font-size: x-large;
 }
 
+nav{
+    color: black;
+}
+
+/*===================================================*/
+
+/* Sign-up form css */
 .signupForm{
     font-family: 'Roboto', sans-serif;
     font-size : 14px;
@@ -55,6 +56,8 @@ strong{
     left: 15%;
 }
 
+
+/* Sign-in form css */
 .signinForm{
     font-family: 'Roboto', sans-serif;
     font-size : 14px;
@@ -63,46 +66,63 @@ strong{
     left: 15%;
 }
 
-.inp{
+/* Header in sign-up and sign-in form css */
+h1{
+    position:fixed;
+
+}
+
+/* Text input in sign-up and sign-in form */
+.inpUser{
     padding: 10px;
-    position: relative;
-    left: 510px;
+    position: fixed;
+    left: 45%;
 }
 
-nav{
-    color: black;
+.inpPass{
+    padding: 10px;
+    position: fixed;
+    left: 44.5%;
+    margin: 10px;
 }
 
+.inpConfirmPass{
+    padding: 10px;
+    position: fixed;
+    left: 44%;
+    margin: 20px;
+}
+
+/* Submit button in sign-up and sign-in form */
 .submit{
     padding: 10px;
-    float: left;
-    position: relative;
-    left: 565px;
-    top: 5px;
+    position: absolute;
+    width: 235px;
+    left: 27.5%;
+    top: 100%;
+    margin: 30px;
 }
 
-.func{
-    padding: 10px;
-    float: left;
-    position: relative;
-    left: 570px;
-}
-
+/* Sign-up header css */
 .signupH1{
     font-family: 'Roboto', sans-serif;
     text-align: center;
     position: relative;
     top: 200px;
+    color: brown;
 }
 
+/* Sign-in header css */
 .signinH1{
     font-family: 'Roboto', sans-serif;
     text-align: center;
     position: relative;
-    left: -20px;
+    left: -10px;
+    color: darkorange;
     top: 200px;
 }
 
+/* Shoutbox display area css */
 .callcomments{
     width: 500px;
     height: 500px;
@@ -112,6 +132,8 @@ nav{
     text-align: left;
     overflow-y: auto;
 }
+
+/* Shoutbox submit button css */
 .post{
     position: relative;
     left: 35%;
@@ -119,6 +141,7 @@ nav{
     width: 500px;
 }
 
+/* Shoutbox textarea css */
 .cmt{
     width: 500px;
     resize: none;
@@ -127,38 +150,52 @@ nav{
     top: 110px;
 }
 
+/* About page css */
 .about{
     position: relative;
     left: 40%;
     top: 200px;
 }
 
+/* Forum whole display div css */
+.forumDis{
+    position: absolute;
+}
+
+/* Forum important posts display css */
 .impArea{
-    position: relative;
-    left: 40%;
-    top:70px;
-    height:100px;
+    position: fixed;
+    left: 30%;
+    top:80px;
 }
 
+/* Forum general posts display css */
 .genArea{
-    position: relative;
-    left: 40%;
-    top:100px;
-    height:300px;
-    overflow-y: scroll;
+    position: fixed;
+    left:60%;
+    top:80px;
 }
 
+/* links css */
+a{
+    color: goldenrod;
+}
+
+/* Forum create box css */
 .crForum{
-    position: relative;
+    position: absolute;
     left: 100px;
+    top: 200px;
 }
 
+/* Forum submit button css */
 .forumSubmit{
     position: relative;
     right: 60px;
     bottom: 70px;
 }
 
+/* Forum create new Forum header */
 h2{
     font-size:16pt;
     left:-60px;
@@ -166,22 +203,50 @@ h2{
     bottom: 65px;
 }
 
+/* Forum name display css */
 .frname{
     position:relative;
     width:250px;
 }
 
+/* Forum description display css */
 .fdesc{
     position:relative;
     resize: none;
     top: 15px;
 }
+
+/* Forum important header*/
 h3{
     color:green;
 }
+
+/* Forum other header*/
 h4{
-    position: relative;
-    left: 40%;
-    top: 90px;
     color: green;
+}
+
+/* Forum post title  */
+h5{
+    color: palegoldenrod;
+    border: double;
+    font-size: 14pt;
+    padding: 10px;
+    width: auto;
+    display: inline;
+}
+
+/* Posts view css*/
+.postView{
+    position: fixed;
+    width: 400px;
+    left: 16%;
+    top: 10%;
+}
+
+/* Post text area css */
+.postbody{
+    resize: none;
+    width: 500px;
+    height: 100px;
 }

@@ -30,6 +30,7 @@ $class1 = new signUp();
             <a href="index_scene.php" onclick="w3_close()">Home</a>
             <a href="about_scene.php" onclick="w3_close()">About</a>
             <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
+            <a href="forum_scene.php" onclick="w3_close()">Forum</a>
             <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Sign Out</a>";}?>
             <a href="javascript:void(0)" onclick="w3_close()"
                class="w3-closenav">Close</a>
@@ -39,16 +40,16 @@ $class1 = new signUp();
         <div class="w3-opennav w3-top w3-hover-text-grey" onclick="w3_open()">☰</div>
 
         <div>
-            <h1 class="signupH1"> Use the following form to sing in</h1>
+            <h1 class="signupH1"> Use the following form to Sign Up</h1>
         </div>
 
         <form id="signupForm" class="signupForm" name="signupForm" method="POST">
 
-            <input type="text" class="inp" id="username" name="user" placeholder="Your username"> </br>
+            <input type="text" class="inpUser" id="username" name="user" placeholder="Your username"> </br>
             </br>
-            <input type="password" class="inp" id="pass" name="pass" placeholder="Your password"> </br>
+            <input type="password" class="inpPass" id="pass" name="pass" placeholder="Your password"> </br>
             </br>
-            <input type="password" class="inp" id="passcon" name="passcon" placeholder="Confirm your password"> </br>
+            <input type="password" class="inpConfirmPass" id="passcon" name="passcon" placeholder="Confirm your password"> </br>
             <input type="submit" class="submit" id="submit" value="Sign Up" name="submit"> </br>
 
             <?php if(isset($_POST['submit']))   $class1->ValConfirmPass()  ?>

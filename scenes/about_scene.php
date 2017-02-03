@@ -3,6 +3,7 @@
 
     session_start();
     $class = new aboutus();
+    $class->WelcomeFunc();
 ?>
 
 <html>
@@ -19,7 +20,8 @@
 
             <a href="index_scene.php" onclick="w3_close()">Home</a>
             <a href="about_scene.php" onclick="w3_close()">About</a>
-            <a href="signup_scene.php" onclick="w3_close()">Sign Up</a>
+            <a href="forum_scene.php" onclick="w3_close()">Forum</a>
+            <?php if (isset($_SESSION['username'])== null){ echo "<a href=\"signup_scene.php\" onclick=\"w3_close()\">Sign Up</a>";}?>
             <?php if (isset($_SESSION['username'])== null){ echo "<a href=\"signin_scene.php\" onclick=\"w3_close()\">Sign In</a>";}?>
             <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Sign Out</a>";}?>
             <a href="javascript:void(0)" onclick="w3_close()"

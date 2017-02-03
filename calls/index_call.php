@@ -10,12 +10,12 @@ class indexCall
 
             if ($userCheck!= null)
             {
-                echo "<p style='position: absolute; left: 75%; top: 1% '>Hi! " . $_SESSION['username']."</p>";
+                echo "<p style='position: absolute; left: 75%; top: 1%; color: deepskyblue; '>Hi! " . $_SESSION['username']."</p>";
             }
         }
         else
         {
-            echo "<p style='position: absolute; left: 75%; top: 1% '>Welcome!</p>";
+            echo "<p style='position: absolute; left: 75%; top: 1%; color: blueviolet; '>Welcome!</p>";
         }
     }
 
@@ -85,7 +85,7 @@ class indexCall
             $sql = "INSERT INTO $table (comment, username, timing )VALUES ('$commentTxt','$user', '$date')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "<p style='color: orange; position: absolute; left: 43%; top: 90% '>Comment Posted Successfully</p>";
+                echo "<p style='color: orange; position: absolute; left: 45%; top: 90% '>Comment Posted Successfully</p>";
                 echo "<meta http-equiv=\"refresh\" content=\"1;url=http://localhost/secure/\" />";
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error;
