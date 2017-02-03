@@ -10,7 +10,7 @@ class indexCall
 
             if ($userCheck!= null)
             {
-                echo "<p style='position: absolute; left: 75%; top: 1%; color: deepskyblue; '>Hi! " . $_SESSION['username']."</p>";
+                echo "<a style='position: absolute; left: 75%; top: 1%; color: deepskyblue;' href='personal_scene.php'>Hi! " . $_SESSION['username']."</a>";
             }
         }
         else

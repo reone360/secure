@@ -28,6 +28,11 @@ strong{
     min-width:100px;
     left: 300px;
     height:185px;
+    background-color: dimgrey;
+}
+
+.w3-top{
+    width:10px;
 }
 
 .w3-white{
@@ -133,12 +138,30 @@ h1{
     overflow-y: auto;
 }
 
+.callPcomments{
+    width: 500px;
+    position: absolute;
+    right: 5%;
+    top: 280px;
+    text-align: left;
+}
+
 /* Shoutbox submit button css */
 .post{
     position: relative;
     left: 35%;
     top: 100px;
     width: 500px;
+    border-radius: 40px;
+}
+
+.Ppost{
+    position: absolute;
+    right: 6%;
+    top: 220px;
+    width: 455px;
+    padding: 10px;
+    border-radius:25px;
 }
 
 /* Shoutbox textarea css */
@@ -148,6 +171,16 @@ h1{
     position: relative;
     left: 35%;
     top: 110px;
+    border-radius: 15px;
+}
+
+.Pcmt{
+    width: 500px;
+    resize: none;
+    position: absolute;
+    right: 5%;
+    top: 150px;
+    border-radius: 20px;
 }
 
 /* About page css */
