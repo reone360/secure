@@ -1,10 +1,10 @@
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/personal_call.php');
+include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/Profile_Search_call.php');
 
 session_start();
 
-$class1 = new personalCall();
+$class1 = new ProfileSearchCall();
 $class1 ->WelcomeFunc();
 
 ?>
@@ -21,7 +21,7 @@ $class1 ->WelcomeFunc();
 
     <body>
 
-        <!-- Sidenav (hidden by default) -->
+    <!-- Sidenav (hidden by default) -->
         <nav class="w3-sidenav w3-card-2 w3-top w3-medium w3-animate-top" id="mySidenav">
 
             <a href="index_scene.php" onclick="w3_close()">Home</a>
@@ -44,9 +44,19 @@ $class1 ->WelcomeFunc();
         </div>
 
 
-        <strong> <?php echo $_SESSION['username']. "'s Wall" ?></strong>
+        <strong> <?php if (isset($_GET['PrName'])) echo $_GET['PrName']." 's Wall"; else echo "Profiles Search";?> </strong>
 
-        <?php $class1->rendFunc();?> <!--comments-->
+        <div class="searchbox" id="searchbox" name="searchbox">
+            <form method="POST">
+                <input type="text" id="searchName" class="searchName" name="searchName" placeholder="Profile Search">
+                <input type="submit" id="submitSearch" class="submitSearch" name="submitSearch" value="Search">
+
+                <?php if(isset($_POST['submitSearch']))   $class1->SearchProfile(); ?>
+            </form>
+        </div>
+
+
+        <?php if (isset($_GET['PrName'])) $class1->ProfileView(); ?>
         <!-- End page content -->
 
         <script>
