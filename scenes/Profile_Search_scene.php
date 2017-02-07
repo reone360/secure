@@ -51,10 +51,13 @@ $class1 ->WelcomeFunc();
                 <input type="text" id="searchName" class="searchName" name="searchName" placeholder="Profile Search">
                 <input type="submit" id="submitSearch" class="submitSearch" name="submitSearch" value="Search">
 
-                <?php if(isset($_POST['submitSearch']))   $class1->SearchProfile(); ?>
+                <?php if(isset($_POST['submitSearch']))
+                {?>
+                    <p class='PrUSerCol'>Relevant Matches: </p>
+                   <?php $class1->SearchProfile();
+                }?>
             </form>
         </div>
-
 
         <?php if (isset($_GET['PrName'])) $class1->ProfileView(); ?>
         <!-- End page content -->

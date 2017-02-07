@@ -47,7 +47,9 @@
 
         <strong> Shoutbox</strong>
 
-            <!-- End page content -->
+        <?php $class1->rendFunc();?> <!--comments-->
+
+        <!-- End page content -->
 
         <script>
             // Script to open and close sidenav
@@ -60,7 +62,7 @@
             }
         </script>
 
-        <?php $class1->rendFunc();?> <!--comments-->
+
 
     </body>
 

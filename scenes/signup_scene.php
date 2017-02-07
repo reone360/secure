@@ -34,6 +34,7 @@ $class1 = new signUp();
             <a href="about_scene.php" onclick="w3_close()">About</a>
             <a href="forum_scene.php" onclick="w3_close()">Forum</a>
             <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
+            <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"Profile_Search_scene.php\" onclick=\"w3_close()\">Profiles</a>";}?>
             <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Sign Out</a>";}?>
             <a href="javascript:void(0)" onclick="w3_close()"
                class="w3-closenav">Close</a>

@@ -27,6 +27,7 @@ $class1 ->WelcomeFunc();
         <a href="index_scene.php" onclick="w3_close()">Home</a>
         <a href="about_scene.php" onclick="w3_close()">About</a>
         <a href="forum_scene.php" onclick="w3_close()">Forum</a>
+        <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"Profile_Search_scene.php\" onclick=\"w3_close()\">Profiles</a>";}?>
         <?php if (isset($_SESSION['username'])== null){ echo "<a href=\"signup_scene.php\" onclick=\"w3_close()\">Sign Up</a>";}?>
         <?php if (isset($_SESSION['username'])== null){ echo "<a href=\"signin_scene.php\" onclick=\"w3_close()\">Sign In</a>";}?>
         <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Sign Out</a>";}?>
@@ -46,7 +47,7 @@ $class1 ->WelcomeFunc();
 
     <strong> Forum</strong>
 
-    <div class="postView" id="postView" name="postView">
+    <div class="postView" id="postView">
         <?php echo "<h5>".$_GET['name']."</h5>"; ?>
         <?php $class1->displayPost();  ?>
         <?php $class1->rendFuncPost(); ?>

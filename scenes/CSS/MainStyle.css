@@ -284,6 +284,14 @@ h5{
     resize: none;
     width: 500px;
     height: 100px;
+    border-radius: 15px;
+}
+
+.pst{
+    position: relative;
+    border-radius: 50px;
+    height: 50px;
+    left: 200px;
 }
 
 /* Search profiles search box */
@@ -304,6 +312,20 @@ h5{
 
 /* User linking in Profile search */
 .PrUSer{
-    position: relative;
+    position: fixed;
     top: 100px;
+    left: 100px;
 }
+
+.PrUserCol{
+    position: fixed;
+    top:50px;
+    border: solid lightslategray;
+    width: 250px;
+    text-align: center;
+    height: 300px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+/*=======================================*/
