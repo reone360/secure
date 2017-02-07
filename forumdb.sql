@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2017 at 03:18 PM
+-- Generation Time: Feb 07, 2017 at 10:41 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -49,7 +49,8 @@ INSERT INTO `forum` (`forum_id`, `forum_name`, `forum_desc`, `sticky`, `timin`) 
 (8, 'adasd', 'qweqwe', 0, '02-02-2017 14:55'),
 (9, 'qweqwe', 'qweqwe', 0, '02-02-2017 14:55'),
 (10, 'qwewqe', 'qwewqe', 0, '02-02-2017 14:56'),
-(11, 'qwewqewqewqe', 'wqewqewqeq', 0, '02-02-2017 14:56');
+(11, 'qwewqewqewqe', 'wqewqewqeq', 0, '02-02-2017 14:56'),
+(12, 'This is a new vamped forum', 'Just checking out', 1, '07-02-2017 10:15');
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,14 @@ INSERT INTO `post` (`post_id`, `post_author`, `post_body`, `forum_name`, `timin`
 (2, 'admin', 'This is a post to sample out the bs in this bisssssssssssssssssssssssssssssssssssssssssssh thank you', 'sample 232333', ''),
 (3, 'admin', 'a fucking dash >>', 'this allows for sticky', '02-02-2017 11:38'),
 (4, 'admin', 'asdsadsad', 'this allows for sticky', '02-02-2017 11:48'),
-(5, 'admin', 'well wow this works', 'das ist forum', '02-02-2017 11:54');
+(5, 'admin', 'well wow this works', 'das ist forum', '02-02-2017 11:54'),
+(6, 'jontest', 'dsfdsfsfsdf', 'sample forum', '03-02-2017 08:38'),
+(7, 'jontest', 'dsfdsfsfsdf', 'sample forum', '03-02-2017 08:38'),
+(8, 'jontest', 'dsfsdf', 'sample forum', '03-02-2017 08:39'),
+(9, 'admin', 'where are the posts?', 'qweqwe', '03-02-2017 10:27'),
+(10, 'admin', 'just a comment', 'will this forum work?', '07-02-2017 10:15'),
+(11, 'admin', 'will this work?', 'sample 232333', '07-02-2017 10:28'),
+(12, 'admin', 'will it work?', 'sample 232333', '07-02-2017 10:31');
 
 --
 -- Indexes for dumped tables
@@ -101,12 +109,12 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `forum_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `forum_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `post_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
