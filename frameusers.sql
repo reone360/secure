@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2017 at 11:30 AM
+-- Generation Time: Feb 07, 2017 at 10:41 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -75,7 +75,51 @@ INSERT INTO `comments` (`cid`, `username`, `comment`, `timing`) VALUES
 (46, 'admin', 'ok gonna test another url', '27-01-2017 09:08'),
 (47, 'admin', 'google.com', '27-01-2017 09:09'),
 (48, 'admin', 'Link detection integration is complete!', '27-01-2017 09:15'),
-(49, 'admin', 'just sum shaout', '03-02-2017 09:02');
+(49, 'admin', 'just sum shaout', '03-02-2017 09:02'),
+(50, 'admin', 'nvm', '03-02-2017 11:43'),
+(51, 'admin', 'testing smth', '03-02-2017 11:48'),
+(52, 'admin', 'testing smth', '03-02-2017 11:59'),
+(53, 'admin', 'will this work?', '03-02-2017 12:00'),
+(54, 'admin', 'will this work?', '03-02-2017 12:00'),
+(55, 'admin', 'smth', '03-02-2017 12:01'),
+(56, 'admin', 'huh g...............', '03-02-2017 12:02'),
+(57, 'admin', 'sadsaddddddddddddddddddd', '03-02-2017 14:02'),
+(58, 'admin', 'jsut another test', '03-02-2017 14:34'),
+(59, 'admin', 'well well', '03-02-2017 14:45'),
+(60, 'admin', 'testing', '03-02-2017 14:48'),
+(61, 'admin', 'testing', '03-02-2017 14:48'),
+(62, 'admin', 'just to see if it still works', '07-02-2017 09:19'),
+(63, 'admin', 'does it still?', '07-02-2017 09:21'),
+(64, 'admin', 'great, this is resilient', '07-02-2017 09:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pcomments`
+--
+
+CREATE TABLE `pcomments` (
+  `pcid` int(100) NOT NULL,
+  `comment_body` text NOT NULL,
+  `comment_author` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `timin` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pcomments`
+--
+
+INSERT INTO `pcomments` (`pcid`, `comment_body`, `comment_author`, `username`, `timin`) VALUES
+(1, 'sum text', 'jontest', 'admin', 'sometimetoday'),
+(2, 'sdfs', 'admin', 'admin', '03-02-2017 15:03'),
+(3, 'this is testing', 'admin', 'admin', '03-02-2017 15:04'),
+(4, 'hi there jon', 'admin', 'jontest', '06-02-2017 14:31'),
+(5, '', 'admin', 'jontest', '06-02-2017 14:48'),
+(6, '', 'admin', 'jontest', '06-02-2017 14:48'),
+(7, 'this should be fine now', 'admin', 'jontest', '06-02-2017 14:49'),
+(8, 'testing', 'admin', 'admin', '07-02-2017 09:40'),
+(9, 'testing new methods', 'admin', 'jontest', '07-02-2017 09:56');
 
 -- --------------------------------------------------------
 
@@ -128,7 +172,8 @@ INSERT INTO `users` (`uid`, `pid`, `username`, `password`) VALUES
 (20, 4, 'somemorr', '$2a$09$tryingtoblowtheblowfiehFfR.QFQraiuGXU0pXXZJn/SYfRBRtK'),
 (21, 4, 'another', '$2a$09$tryingtoblowtheblowfiehFfR.QFQraiuGXU0pXXZJn/SYfRBRtK'),
 (22, 4, 'dsfs', '$2a$09$tryingtoblowtheblowfiehFfR.QFQraiuGXU0pXXZJn/SYfRBRtK'),
-(23, 4, 'finaly', '$2a$09$tryingtoblowtheblowfiehFfR.QFQraiuGXU0pXXZJn/SYfRBRtK');
+(23, 4, 'finaly', '$2a$09$tryingtoblowtheblowfiehFfR.QFQraiuGXU0pXXZJn/SYfRBRtK'),
+(24, 4, 'ifthisworks', '$2a$09$tryingtoblowtheblowfiehFfR.QFQraiuGXU0pXXZJn/SYfRBRtK');
 
 --
 -- Indexes for dumped tables
@@ -139,6 +184,16 @@ INSERT INTO `users` (`uid`, `pid`, `username`, `password`) VALUES
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`cid`);
+
+--
+-- Indexes for table `pcomments`
+--
+ALTER TABLE `pcomments`
+  ADD PRIMARY KEY (`pcid`),
+  ADD KEY `username` (`username`),
+  ADD KEY `comment_author` (`comment_author`),
+  ADD KEY `username_2` (`username`);
+ALTER TABLE `pcomments` ADD FULLTEXT KEY `comment_author_2` (`comment_author`);
 
 --
 -- Indexes for table `uac`
@@ -161,7 +216,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `cid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `cid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+--
+-- AUTO_INCREMENT for table `pcomments`
+--
+ALTER TABLE `pcomments`
+  MODIFY `pcid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `uac`
 --
