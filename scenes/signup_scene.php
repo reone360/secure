@@ -51,10 +51,13 @@ $class1 = new signUp();
 
             <input type="text" class="inpUser" id="username" name="user" placeholder="Your username"> </br>
             </br>
+            <input type="text" class="inpEmail" id="email" name="email" placeholder="Your Email"> </br>
+            </br>
             <input type="password" class="inpPass" id="pass" name="pass" placeholder="Your password"> </br>
             </br>
             <input type="password" class="inpConfirmPass" id="passcon" name="passcon" placeholder="Confirm your password"> </br>
             <input type="submit" class="submit" id="submit" value="Sign Up" name="submit"> </br>
+
 
             <?php if(isset($_POST['submit']))   $class1->ValConfirmPass()  ?>
             <p id="CheckPassWordMatch"></p>

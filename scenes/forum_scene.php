@@ -63,6 +63,9 @@ $class1 ->WelcomeFunc();
             <h2>Don't see a topic you like? Create your own below! </h2>
             <?php $class1->rendFuncForum(); ?>
         </div>
+
+        <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
+
         <!-- End page content -->
 
         <script>

@@ -60,7 +60,10 @@ $class1 ->WelcomeFunc();
         </div>
 
         <?php if (isset($_GET['PrName'])) $class1->ProfileView(); ?>
-        <!-- End page content -->
+
+        <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
+
+    <!-- End page content -->
 
         <script>
             // Script to open and close sidenav

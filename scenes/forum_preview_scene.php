@@ -52,6 +52,7 @@ $class1 ->WelcomeFunc();
         <?php $class1->displayPost();  ?>
         <?php $class1->rendFuncPost(); ?>
     </div>
+    <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
 
 
 

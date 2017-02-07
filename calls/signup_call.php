@@ -12,10 +12,11 @@ class signUp
         $pass = $_POST['pass'];
         $passConfirm = $_POST['passcon'];
         $user = $_POST['user'];
+        $email= $_POST['email'];
 
-        if (($user ==null) || ($pass ==null))
+        if (($user == null) || ($pass == null) || ($email== null))
         {
-            echo "<p style='color:orangered; position: absolute; left: 28%; top: 250px; '>Username and password are mandatory</p>";
+            echo "<p style='color:orangered; position: absolute; left: 28%; top: 250px; '>Username, password and email are mandatory</p>";
         }
         else if ($pass != $passConfirm)
         {
@@ -24,7 +25,7 @@ class signUp
         else
         {
             $pass_encrypted = crypt($pass, '$2a$09$tryingtoblowtheblowfish$');
-            $callClass->StoreDetailsUserTable($user,$pass_encrypted);
+            $callClass->StoreDetailsUserTable($user,$pass_encrypted, $email);
 
         }
     }

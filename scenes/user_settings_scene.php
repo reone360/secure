@@ -1,11 +1,11 @@
 <?php
 
-    include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/index_call.php');
+include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/user_settings_call.php');
 
-    session_start();
+session_start();
 
-    $class1 = new indexCall();
-    $class1 ->WelcomeFunc();
+$class1 = new UserSettingsCall();
+$class1 ->WelcomeFunc();
 
 ?>
 
@@ -45,10 +45,36 @@
         </div>
 
 
-        <strong> Shoutbox</strong>
+        <strong> Settings Page</strong>
         <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
 
-        <?php $class1->rendFunc();?> <!--comments-->
+        <div class="SettingsForm" id="SettingsForm" name="SettingsForm">
+            <form method="POST">
+
+                <div id="PassChange" class="PassChange" name="PassChage">
+                    <p> We recomend you change your password every 3 months or so</p>
+                    <input type="password" id="OldPass" class="OldPass" name="OldPass" placeholder="Current Password"></br>
+                    <input type="password" id="NewPass" class="NewPass" name="NewPass" placeholder="New Password"></br>
+                    <input type="password" id="changePass" class="changePass" name="changePass" placeholder="Confirm New Password">
+                </div>
+
+                <div id="EmailChange" class="EmailChange" name="EmailChange">
+                    <p>Changed your email, Let us in on the details</p>
+                    <input type="text" id="OldMail" class="OldMail" name="OldMail" placeholder="Your old email"></br>
+                    <input type="text" id="NewMail" class="NewMail" name="NewMail" placeholder="New email"></br>
+                    <input type="text" id="changeMail" class="changeMail" name="changeMail" placeholder="Confirm new email">
+                </div>
+
+                <input type="submit" id="submitChange" class="submitChange" name="submitChange" value="Save All Changes">
+                <?php if(isset($_POST['submitChange']))   $class1->CheckChanges(); ?>
+            </form>
+
+            <div id="delAccount" class="delAccount" name="delAccount" >
+                <p>Delete your account here</p>
+                <a style="color: sandybrown;" href="delete_account_scene.php" onclick="return confirm('Are you sure you want to delete your account?')" id="DelAC" class="DelAC" name="DelAC">Delete!</a>
+            </div>
+
+        </div>
 
         <!-- End page content -->
 

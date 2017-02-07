@@ -211,7 +211,7 @@ class ConDBFrameuser
     }
 
 
-    public function StoreDetailsUserTable($user, $pass) //Stores the user account details in the db
+    public function StoreDetailsUserTable($user, $pass, $email) //Stores the user account details in the db
     {
         $servername = "localhost";
         $username = "root";
@@ -229,15 +229,15 @@ class ConDBFrameuser
         }
         else
         {
-            $sql = "INSERT INTO $table (pid, username, password)VALUES ('4', '$user', '$pass')";
+            $sql = "INSERT INTO $table (pid, username, password, email)VALUES ('4', '$user', '$pass', '$email')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "<p style='color:greenyellow; position: absolute; left: 31%; top: 250px; '>Account created successfully</p>";
+                echo "<p style='color:greenyellow; position: absolute; left: 31%; top: 280px; '>Account created successfully</p>";
                 echo "<meta http-equiv=\"refresh\" content=\"3;url=http://localhost/secure/\" />";
 
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error; //enable this for develop
-                echo "<p style='color:mediumvioletred; position: absolute; left: 31%; top: 250px; '>Username already exists</p>";
+                echo "<p style='color:mediumvioletred; position: absolute; left: 31%; top: 280px; '>Username already exists</p>";
             }
 
             $conn->close();

@@ -45,6 +45,7 @@
             <p>Thank you for your support!</p>
         </div>
 
+        <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
 
         <script>
             // Script to open and close sidenav

@@ -19,6 +19,16 @@ strong{
     left: 45%;
 }
 
+/* The Gear icon next to the username. The icon is a special text character, so it can be added anywhere */
+.gear{
+    position: absolute;
+    left: 74%;
+    top: 0.8%;
+    color: deepskyblue;
+    text-decoration-line: none;
+    font-size: 16pt;
+}
+
 /* All css in this section are connected with the sidenav */
 .w3-sidenav{
     position: relative;
@@ -82,20 +92,31 @@ h1{
     padding: 10px;
     position: fixed;
     left: 45%;
+    border-radius: 10px;
+}
+
+.inpEmail{
+    padding: 10px;
+    position: fixed;
+    left: 44.5%;
+    margin: 10px;
+    border-radius: 10px;
 }
 
 .inpPass{
     padding: 10px;
     position: fixed;
-    left: 44.5%;
-    margin: 10px;
+    left: 44%;
+    margin: 20px;
+    border-radius: 10px;
 }
 
 .inpConfirmPass{
     padding: 10px;
     position: fixed;
-    left: 44%;
-    margin: 20px;
+    left: 43.5%;
+    margin: 30px;
+    border-radius: 10px;
 }
 
 /* Submit button in sign-up and sign-in form */
@@ -103,9 +124,10 @@ h1{
     padding: 10px;
     position: absolute;
     width: 235px;
-    left: 27.5%;
+    left: 27%;
     top: 100%;
-    margin: 30px;
+    margin: 40px;
+    border-radius: 10px;
 }
 
 /* Sign-up header css */
@@ -329,3 +351,81 @@ h5{
 }
 
 /*=======================================*/
+
+/*===============Settings page CSS =============*/
+.PassChange{
+    position:relative;
+    text-align: center;
+    right: 200px;
+    top:170px;
+}
+
+.OldPass{
+    margin:20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+.NewPass{
+    margin:10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+.changePass{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.EmailChange{
+    position:relative;
+    text-align: center;
+    right: 200px;
+    top:190px;
+}
+
+.OldMail{
+    margin:20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+.NewMail{
+    margin:10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+.changeMail{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.submitChange{
+    position:relative;
+    text-align: center;
+    left: 66%;
+    padding: 20px;
+    height: 100px;
+    border-radius: 80px;
+}
+
+.delAccount{
+    position:relative;
+    left:64%;
+    bottom: 360px;
+    text-align: center;
+    width: 200px;
+}
+
+.chagnesMsg
+{
+    position: relative;
+    color: indianred;
+    bottom: 300px;
+    left: 100px;
+}
+/*==============================================*/
+
