@@ -465,6 +465,119 @@ class ConDBFrameuser
         }
     }
 
+    public function changePass($pass) //Changes the user's password
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $db = "frameusers";
+        $table = "users";
+
+        $user = $_SESSION['username'];
+        $pass_encrypted = crypt($pass, '$2a$09$tryingtoblowtheblowfish$');
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $db);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        else
+        {
+            $sql = "UPDATE $table SET password = '$pass_encrypted' WHERE username='$user'";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "<p style='color:greenyellow; position: absolute; left: 15%; top: 240px; '>Account created successfully</p>";
+                echo "<meta http-equiv=\"refresh\" content=\"3;url=http://localhost/secure/\" />";
+
+            } else {
+                //echo "Error: " . $sql . "<br>" . $conn->error; //enable this for develop
+                echo "<p style='color:mediumvioletred; position: absolute; left: 15%; top: 240px; '>Username already exists</p>";
+            }
+
+            $conn->close();
+
+            //echo "Connected successfully";
+        }
+    }
+
+    public function changeMail($mail) //Changes the user's email
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $db = "frameusers";
+        $table = "users";
+
+        $user = $_SESSION['username'];
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $db);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        else
+        {
+            $sql = "UPDATE $table SET email = '$mail' WHERE username='$user'";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "<p style='color:greenyellow; position: absolute; left: 15%; top: 510px; '>email updated successfully</p>";
+                echo "<meta http-equiv=\"refresh\" content=\"3;url=http://localhost/secure/\" />";
+
+            } else {
+                //echo "Error: " . $sql . "<br>" . $conn->error; //enable this for develop
+                echo "<p style='color:mediumvioletred; position: absolute; left: 15%; top: 510px; '>email failed to update</p>";
+            }
+
+            $conn->close();
+
+            //echo "Connected successfully";
+        }
+    }
+
+    public function chkUsername($check)
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $db = "frameusers";
+        $table = "users";
+
+        $CallClassBack = new recoverPassCall();
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $db);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } else {
+            $sql = "SELECT * FROM $table WHERE username='$check'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0)
+            {
+                /*
+                  Before showing the Password reset form, send some form of token to verify the user,
+                  eg. email, security question etc and add before the next step.
+                  This was done this way as a mock check for the function to work.
+                */
+                $CallClassBack->ShowPassForm();
+            }
+            else
+            {
+                //echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "<p style='color:red; position: absolute; left: 29.5%; top: 250px; '> User not found, please try again</p>";
+
+            }
+
+            $conn->close();
+        }
+
+    }
 
 }
 

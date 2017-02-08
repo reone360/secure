@@ -24,6 +24,8 @@ class UserSettingsCall
 
     public function CheckChanges() //Checks for changes made, if any
     {
+        $CallClass = new ConDBFrameuser();
+
         $oldPass=$_POST['OldPass'];
         $newPass=$_POST['NewPass'];
         $confPass=$_POST['changePass'];
@@ -46,6 +48,7 @@ class UserSettingsCall
             if($newPass == $confPass)
             {
                 //Do Actions here if passwords match
+                $CallClass->changePass($newPass);
             }
             else if($oldPass == $newPass)
             {
@@ -71,6 +74,7 @@ class UserSettingsCall
             if($newMail == $confMail)
             {
                 //Do Actions here if passwords match
+                $CallClass->changeMail($newMail);
             }
             else if($oldMail == $newMail)
             {

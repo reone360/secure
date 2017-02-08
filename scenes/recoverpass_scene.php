@@ -1,14 +1,11 @@
 <?php
 
-    include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/signin_call.php');
+include($_SERVER['DOCUMENT_ROOT'].'/secure/calls/recoverpass_call.php');
 
-    session_start();
+session_start();
 
-    $class1= new signIn();
-
-
+$class1 = new recoverPassCall();
 ?>
-
 
 <html>
 
@@ -18,7 +15,7 @@
         <link rel="shortcut icon" href="Images/title-img.ico" /> <!--Replace this part with your own logo or symbol-->
     </head>
 
-    <title> Sign In</title>
+    <title> Welcome</title>
 
     <body>
 
@@ -30,31 +27,34 @@
             <a href="forum_scene.php" onclick="w3_close()">Forum</a>
             <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"Profile_Search_scene.php\" onclick=\"w3_close()\">Profiles</a>";}?>
             <?php if (isset($_SESSION['username'])== null){ echo "<a href=\"signup_scene.php\" onclick=\"w3_close()\">Sign Up</a>";}?>
-            <a href="signin_scene.php" onclick="w3_close()">Sign In</a>
-            <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Sign Out</a>";}?>
+            <?php if (isset($_SESSION['username'])== null){ echo "<a href=\"signin_scene.php\" onclick=\"w3_close()\">Sign In</a>";}?>
+            <?php if (isset($_SESSION['username'])!= null){ echo "<a href=\"signout_scene.php\" onclick=\"w3_close()\">Log Out</a>";}?>
+
             <a href="javascript:void(0)" onclick="w3_close()"
                class="w3-closenav">Close</a>
 
         </nav>
 
-        <div class="w3-opennav w3-left w3-hover-text-grey" onclick="w3_open()">☰</div>
+        <!-- Top menu -->
+        <div class="w3-top">
 
-        <div>
-            <h1 class="signinH1"> Please Sign in</h1>
+            <div class="w3-opennav w3-left w3-hover-text-grey" onclick="w3_open()">☰</div>
+
         </div>
 
-        <form id="signinForm" class="signinForm" name="signinForm" method="POST">
 
-            <input type="text" class="inpUser" id="username" name="user" placeholder="Your username"> </br>
-            </br>
-            <input type="password" class="inpPass" id="pass" name="pass" placeholder="Your password"> </br>
-            </br>
-            <input type="submit" class="submit" id="submit" value="Sign In" name="submit"> </br>
+        <strong> Password Recovery</strong>
+        <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
 
-            <?php if(isset($_POST['submit']))   $class1->validateUser();  ?>
 
-            <a id="recoverpass" class="recoverpass" name="recoverpass" href="recoverpass_scene.php">Forgot your password?</a>
-        </form>
+
+        <div class="SettingsForm" id="SettingsForm" name="SettingsForm">
+
+            <?php if (!(isset($_POST['sendwhatever']))) $class1->ShowUserForm(); //Doesn't work as intended?>
+
+        </div>
+
+        <!-- End page content -->
 
         <script>
             // Script to open and close sidenav
@@ -67,9 +67,8 @@
             }
         </script>
 
+
+
     </body>
 
 </html>
-
-
-

@@ -130,6 +130,13 @@ h1{
     border-radius: 10px;
 }
 
+/* Forgot password link css*/
+.recoverpass{
+    position: absolute;
+    left: 31%;
+    padding: 5px;
+}
+
 /* Sign-up header css */
 .signupH1{
     font-family: 'Roboto', sans-serif;
@@ -429,3 +436,26 @@ h5{
 }
 /*==============================================*/
 
+
+/*============== Recover Password css=========== */
+
+
+.chkUser{
+    padding: 10px;
+    position: fixed;
+    left: 45%;
+    top:25%;
+    border-radius: 10px;
+}
+
+.sendwhatever{
+    padding: 10px;
+    position: absolute;
+    width: 350px;
+    left: 39%;
+    top: 28%;
+    margin: 40px;
+    border-radius: 10px;
+}
+
+/*==============================================*/
