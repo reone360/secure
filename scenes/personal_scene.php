@@ -48,6 +48,17 @@ $class1 ->WelcomeFunc();
 
         <?php if (isset($_SESSION['username'])!= null){ ?><a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a> <?php } ?>
 
+
+        <div class="upImg" id="upImg" name="upImg">
+            <p> Upload your images below</p>
+            <form method="POST" class="imgUp" id="imgUp" name="imgUp" >
+                <input type="file" class="pic" id="pic" name="pic" accept="image/*">
+                <input type="submit" class="submitPic" id="submitPic" name="submitPic" value="Upload Image">
+
+                <?php If (isset($_POST['submitPic'])) $class1->UploadImg(); ?>
+            </form>
+        </div>
+
         <?php $class1->rendFunc();?> <!--comments-->
         <!-- End page content -->
 

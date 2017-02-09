@@ -175,6 +175,12 @@ h1{
     text-align: left;
 }
 
+.upImg{
+    position: relative;
+    top: 150px;
+    left: 100px;
+}
+
 /* Shoutbox submit button css */
 .post{
     position: relative;

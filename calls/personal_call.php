@@ -53,4 +53,23 @@ class personalCall
             echo "<p style='position: absolute; left: 43%; top: 20% '>Please Sign In to see user comments!</p>";
 
     }
+
+    public function UploadImg()
+    {
+        $user     = $_SESSION['username'];
+        $filename = $_POST['pic'];
+        $datetime = new DateTime();
+
+        $filedir = $_SERVER['DOCUMENT_ROOT']."/scenes/Images/UserGallery/jontest";
+
+        if (file_exists('/secure/scenes/Images/UserGallery/jontest/'))
+        {
+            echo "well this is awkward";
+        }
+        else
+        {
+            echo "No such thing exists";
+        }
+
+    }
 }
