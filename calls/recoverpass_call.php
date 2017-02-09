@@ -49,9 +49,9 @@ class recoverPassCall
 
     public function ShowUserForm()
     {
-        echo "<form id=\"usercheck\" class=\"usercheck\" name=\"usercheck\" method=\"POST\">
-                <input type=\"text\" class=\"chkUser\" id=\"chkUser\" name=\"chkUser\" placeholder=\"Enter your username\"> </br>
-                <input type=\"submit\" id=\"sendwhatever\" class=\"sendwhatever\" name=\"sendwhatever\" value=\"Send 'THE USER VERFICATION' of your choice\">  ";
+        echo "<form id='usercheck' class='usercheck' name='usercheck' method='POST'>
+                <input type='text' class='chkUser' id='chkUser' name='chkUser' placeholder='Enter your username'> </br>
+                <input type='submit' id='sendwhatever' class='sendwhatever' name='sendwhatever' value='Send THE USER VERFICATION of your choice'>  ";
 
         if(isset($_POST['sendwhatever']))   $this->SendVerificationWayToUserMYGODTHISISALONGNAME();
 
@@ -62,18 +62,16 @@ class recoverPassCall
     {
         echo "<form method='POST'>
 
-                <div id='PassChange' class='PassChange' name='PassChage'>
+                <div id='PassChangeRec' class='PassChangeRec' name='PassChage'>
                     <p> We recomend you change your password every 3 months or so</p>
                     <input type='password' id='OldPass' class='OldPass' name='OldPass' placeholder='Current Password'></br>
                     <input type='password' id='NewPass' class='NewPass' name='NewPass' placeholder='New Password'></br>
-                    <input type='password' id='changePass' class='changePass' name='changePass' placeholder='Confirm New Password'>
-                </div>
+                    <input type='password' id='changePass' class='changePass' name='changePass' placeholder='Confirm New Password'> </br></br>
+                    <input type='submit' id='submitChangeRec' class='submitChangeRec' name='submitChangeRec' value='Save Changes'>";
 
-                <input type='submit' id='submitChange' class='submitChange' name='submitChange' value='Save All Changes'> ";
+        if(isset($_POST['submitChangeRec'])) echo "hi?";
 
-
-                if(isset($_POST['submitChange']))   $this->CheckChanges();
-
-        echo "</form>";
+        echo "   </div>
+              </form>";
     }
 }

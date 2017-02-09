@@ -44,13 +44,11 @@ $class1 = new recoverPassCall();
 
 
         <strong> Password Recovery</strong>
-        <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
-
 
 
         <div class="SettingsForm" id="SettingsForm" name="SettingsForm">
 
-            <?php if (!(isset($_POST['sendwhatever']))) $class1->ShowUserForm(); //Doesn't work as intended?>
+            <?php $class1->ShowUserForm(); ?>
 
         </div>
 

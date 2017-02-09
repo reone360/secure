@@ -64,7 +64,7 @@ $class1 ->WelcomeFunc();
             <?php $class1->rendFuncForum(); ?>
         </div>
 
-        <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
+        <?php if (isset($_SESSION['username'])!= null){ ?><a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a> <?php } ?>
 
         <!-- End page content -->
 

@@ -442,7 +442,7 @@ h5{
 
 .chkUser{
     padding: 10px;
-    position: fixed;
+    position: absolute;
     left: 45%;
     top:25%;
     border-radius: 10px;
@@ -458,4 +458,14 @@ h5{
     border-radius: 10px;
 }
 
+.PassChangeRec
+{
+    position:relative;
+    text-align: center;
+    top:350px;
+}
+
+.submitChangeRec{
+    border-radius: 10px;
+}
 /*==============================================*/

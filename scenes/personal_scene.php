@@ -46,7 +46,7 @@ $class1 ->WelcomeFunc();
 
         <strong> <?php echo $_SESSION['username']. "'s Wall" ?></strong>
 
-        <a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a>
+        <?php if (isset($_SESSION['username'])!= null){ ?><a class="gear" id="gear" name="gear" href="user_settings_scene.php">⚙</a> <?php } ?>
 
         <?php $class1->rendFunc();?> <!--comments-->
         <!-- End page content -->
